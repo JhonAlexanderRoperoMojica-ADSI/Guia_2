@@ -3,16 +3,16 @@ addEventListener("DOMContentLoaded", (e) => {
     formulario.addEventListener("submit", (e) => {
         e.preventDefault();
         validar();
-        function validar(){
-            let lado1 = document.getElementById("numero1").value;
-            let lado2 = document.getElementById("numero2").value;
-
-            if((lado1 > 0) && (lado2 > 0)){
-                let area = lado1 * lado2;
-                document.getElementById('resultado').innerHTML = `El área del rectángulo es: ${area}`;
+        function validar() {
+            let presion = document.getElementById("numero1").value;
+            let temperatura = document.getElementById("numero2").value;
+            if ((temperatura > 100) || (presion > 200)) {
+                document.getElementById('resultado').style.color = "red";
+                document.getElementById('resultado').innerHTML = `¡¡¡Tas Mal 😥!!!`;
             }
-            else{
-                document.getElementById('resultado').innerHTML = `Los lados deben ser positivos.`;
+            else {
+                document.getElementById("resultado").style.color = "blueviolet";
+                document.getElementById('resultado').innerHTML = `¡¡¡Tas Muy Bien 😘!!!`;
             }
         }
     })
