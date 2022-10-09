@@ -15,21 +15,10 @@ div{
     box-shadow: 20px 20px 20px black;
 }
 
-.input{
+input{
     margin: 15px;
     border-radius: 5px;
     box-shadow: 10px 10px 10px black;
-}
-
-.caja{
-    margin: 10px;
-    border-radius: 5px;
-    box-shadow: 10px 10px 10px black;
-}
-
-.caja:hover{
-    background-color: red;
-    transition: 1s;
 }
 
 .btn{
