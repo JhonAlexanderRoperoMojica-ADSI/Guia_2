@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
-    <title>punto-3</title>
+    <title>punto-4</title>
 </head>
+
 <body>
     <div>
-        <form id="formulario">
-            <h1>Desarrollar un diagrama que lea 3 valores diferentes e indique cual es el mayor de ellos, el menor o
-                si son iguales.</h1>
-            <input type="number" placeholder="Ingrese un Numero" id="numero1" required >
-            <input type="number" placeholder="Ingrese un Numero" id="numero2" required >           
-            <input type="number" placeholder="Ingrese un Numero" id="numero3" required >
-            <h1 id="resul"></h1>
-            <h1 id="resul2"></h1>
-            <input type="submit" id="boton" value="Continuar" class="btn"></input>
+        <h1>Cálculo de áreas - Elige una figura geométrica:" Triángulo y Círculo <br>
+            ¿Qué figura quiere calcular? <br>
+            Triangulo = base * altura / 2 <br>
+            Circulo = PI * radio* radio</h1>
+
+        <select name="select" id="dato" class="caja">
+            <option value="value1" disabled selected>Escoja una opción</option>
+            <option value="Triangulo">#1 Triangulo</option>
+            <option value="Circulo">#2 Circulo</option>
+        </select>
+
+        <form id="formTriangulo" class="Triangulo">
+            <input type="number" id="Base" class="input" required placeholder="Ingrese la base del Tirangulo"> <br>
+
+            <input type="number" id="Altura" class="input" required placeholder="Ingrese la altura del Tirangulo">
+        </form>
+
+        <form id="formCirculo" class="Circulo">
+            <input type="number" id="Radio" class="input" required placeholder="Digite el Radio del Circulo">
+        </form>
+
+        <form id="area" class="area">
+            <h1 id="resultado" class="resultado"></h1>
+            <input type="submit"  value="calcular" class="btn">
         </form>
     </div>
 </body>
+
 </html>

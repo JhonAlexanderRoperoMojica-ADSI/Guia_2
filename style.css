@@ -4,6 +4,7 @@
 }
 
 div{
+    text-align: center;
     margin: auto;
     width: 50%;
     height: 50%;
@@ -14,18 +15,21 @@ div{
     box-shadow: 20px 20px 20px black;
 }
 
-input{
-    margin: 5px;
+.input{
+    margin: 15px;
     border-radius: 5px;
     box-shadow: 10px 10px 10px black;
 }
 
-#formulario{
-    text-align: center;
+.caja{
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px black;
 }
 
-#dato{
-    border-radius: 8px;
+.caja:hover{
+    background-color: red;
+    transition: 1s;
 }
 
 .btn{
@@ -36,4 +40,12 @@ input{
 .btn:hover{
     background: red;
     transition: 1s;
+}
+
+.Triangulo{
+    display: none;
+}
+
+.Circulo{
+    display: none;
 }

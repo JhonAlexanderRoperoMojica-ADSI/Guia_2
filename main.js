@@ -1,41 +1,34 @@
-addEventListener("DOMContentLoaded", (e) =>{
-    let formulario = document.getElementById("formulario");
-    formulario.addEventListener("submit", (e) =>{
-        e.preventDefault();
-        let numero1 = document.getElementById("numero1").value;
-        let numero2 = document.getElementById("numero2").value;
-        let numero3 = document.getElementById("numero3").value;
-        leer_dato(numero1, numero2, numero3); 
+function comprobar(seleccionado) {
+    if (seleccionado == "Triangulo") {
+        document.querySelector("#formTriangulo").style.display = 'block';
+    }
+    document.querySelector("#formCirculo").style.display = 'block';
+}
+let seleccionado;
+addEventListener("DOMContentLoaded", (e) => {
+    let dato = document.querySelector("#dato");
+    dato.addEventListener("change", (e) => {
+        document.querySelector("#formTriangulo").style.display = 'none';
+        document.querySelector("#formCirculo").style.display = 'none';
+        seleccionado = dato.value;
+        comprobar(seleccionado);
     })
 })
-
-function leer_dato(V1, V2, V3){
-    if (V1 > V2 && V1 > V3){
-        document.getElementById("resul").innerHTML = "El Numero Mayor es: " + V1;
-        if (V2 < V3){
-            document.getElementById("resul2").innerHTML = "El Numero Menor es: " + V2;
-        }else if(V3 < V2){
-            document.getElementById("resul2").innerHTML = "El Numero Menor es: " + V3;
-        }else{
-            document.getElementById('resul2').innerHTML = "El Numero Repetido es: " + V1;
-        } 
-    } else if (V2 > V1 && V2 > V3){
-        document.getElementById("resul").innerHTML = "El Numero Mayor es: " + V2;
-        if (V1 < V3){
-            document.getElementById("resul2").innerHTML = "El Numero Menor es: " + V1;
-        }else if(V3 < V2){
-            document.getElementById("resul2").innerHTML = "El Numero Menor es: " + V3;
-        }else{
-            document.getElementById('resul2').innerHTML = "El Numero Repetido es: " + V2;
+addEventListener("DOMContentLoaded", (e) => {
+    let area = document.querySelector("#area");
+    area.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (seleccionado == "Triangulo") {
+            let base = document.querySelector("#Base").value;
+            let altura = document.querySelector("#Altura").value;
+            let area = (base * altura) / 2;
+            document.querySelector("#resultado").innerHTML = area;
+        } else if (seleccionado == "Circulo") {
+            let radio = document.querySelector("#Radio").value;
+            let area = Math.PI * radio * radio;
+            document.querySelector("#resultado").innerHTML = area;
+        } else {
+            alert("No se puede acceder si escoger una figura...")
         }
-    }else if (V3 > V1 && V3 > V2){
-        document.getElementById("resul").innerHTML = "El Numero Mayor es: " + V3;
-        if (V1 < V2){
-            document.getElementById("resul2").innerHTML = "El Numero Menor es: " + V1;
-        }else if(V2 < V3){
-            document.getElementById("resul2").innerHTML = "El Numero Menor es: " + V2;
-        }else{
-            document.getElementById('resul2').innerHTML = "El Numero Repetido es: " + V3;
-        }
-    } 
-}
+    })
+})
