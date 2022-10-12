@@ -3,16 +3,22 @@ addEventListener("DOMContentLoaded", (e) => {
     formulario.addEventListener("submit", (e) => {
         e.preventDefault();
         validar();
+
         function validar() {
-            let presion = document.getElementById("numero1").value;
-            let temperatura = document.getElementById("numero2").value;
-            if ((temperatura > 100) || (presion > 200)) {
-                document.getElementById('resultado').style.color = "red";
-                document.getElementById('resultado').innerHTML = `¡¡¡Tas Mal 😥!!!`;
+
+            let consumo = document.getElementById("numero1").value;
+
+            if (consumo >= 130000) {
+
+                let descuento = consumo * 0.15;
+                let total = consumo - descuento;
+
+                document.getElementById('resultado').innerHTML = `Su Descuento es del 15%`;
+                document.getElementById('resultado1').innerHTML = `Usted debe Pagar ${total} Pesos`;
             }
             else {
-                document.getElementById("resultado").style.color = "blueviolet";
-                document.getElementById('resultado').innerHTML = `¡¡¡Tas Muy Bien 😘!!!`;
+                document.getElementById("resultado").style.color = `No Tiene Descuento`;
+                document.getElementById('resultado1').innerHTML = `Usted debe Pagar ${consumo} Pesos`;
             }
         }
     })
