@@ -5,14 +5,17 @@ addEventListener("DOMContentLoaded", (e) => {
         validar();
 
         function validar() {
-            let num1 = document.getElementById("numero1").value;
-            let num2 = document.getElementById("numero2").value;
-            let num3 = document.getElementById("numero3").value;
-            let num4 = document.getElementById("numero4").value;
-            let num5 = document.getElementById("numero5").value;
+            
+            let numero1 = Number(document.getElementById("numero1").value);
+            let numero2 = Number(document.getElementById("numero2").value);
 
-            let promedio = (parseFloat(num1)+parseFloat(num2)+parseFloat(num3)+parseFloat(num4)+parseFloat(num5))/5;
-            document.getElementById("resultado").innerHTML = `el promedio es: ${promedio}`;
-    }
+            if (numero1 > numero2) {
+                let resta = numero1 - numero2;
+                document.getElementById("resultado").innerHTML = `la resta es: ${resta}`;
+            }
+            else {
+                document.getElementById("resultado").innerHTML = "No ha sido posible realizar la operación, el primer número debe ser mayor que el segundo.";
+            }
+        }
     })
 })
