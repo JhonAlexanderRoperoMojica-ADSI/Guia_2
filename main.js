@@ -6,27 +6,24 @@ addEventListener("DOMContentLoaded", (e) => {
 
         function validar() {
 
-            let suma = 0;
-            let multiplicacion = 0;
+            let valor1 = parseInt(prompt("Ingrese el valor del primer producto"));
+            let valor2 = parseInt(prompt("Ingrese el valor del segundo producto"));
+            let valor3 = parseInt(prompt("Ingrese el valor del tercero producto"));
+            let valor4 = parseInt(prompt("Ingrese el valor del cuarto producto"));
+            let valor5 = parseInt(prompt("Ingrese el valor del quinto producto"));
 
-            let a = Number(document.getElementById("numero1").value);
-            let b = Number(document.getElementById("numero2").value);
-            let c = Number(document.getElementById("numero3").value);
-            let d = Number(document.getElementById("numero4").value);
+            if((valor1 > 0) && (valor2 > 0) && (valor3 > 0) && (valor4 > 0) && (valor5 > 0)){
+                let iva1 = 0.19;
+                let subt = valor1 + valor2 + valor3 + valor4 + valor5;
+                let iva2 = subt * iva1;
+                let total = subt + iva2;
 
-            let a1 = a%2;
-            let b1 = b%2;
-            let c1 = c%2;
-            let d1 = d%2;
-
-            if ((a1 == 0) && (b1 == 0) && (c1 == 0) && (d1 == 0)) {   
-                suma = a + b + c + d;
-            }
-            else if ((a1 != 0) && (b1 != 0) && (c1 != 0) && (d1 != 0)) {
-                multiplicacion = a * b * c * d;
-            }
-            document.getElementById("resultado").innerHTML = `La suma es ${suma} `;
-            document.getElementById("resultado2").innerHTML = `la multiplicacion es ${multiplicacion}`;
+                document.getElementById("resultado").innerHTML = `el subtotal es: ${subt}`
+                document.getElementById("resultado2").innerHTML = `el total a pagar es: ${total}`;
         }
+        else {
+            document.getElementById("resultado").innerHTML = 'El valor de todos los productos debe ser mayor a 0';
+        }
+    }
     })
 })
